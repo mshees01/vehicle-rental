@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signupstyle.css">
+    <title>Student Sign Up</title>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="boss">
+            <div class="one">
+                <img src="wvr1.png" alt="vehicle rental"height="75px">
+            </div>
+            </div>
+        <h2>Sign Up</h2>
+        <form action="signup.php" method="post">
+            <label for="name">Username:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            
+            <div class="container">
+                    <div class="form-group">
+                        <label>Gender:</label>
+                        <div>
+                        <input type="radio" id="male" name="gender" value="male" style="width: 15px;"><strong>Male</strong>
+                        
+                        <input type="radio" id="female" name="gender" value="female"style="width: 15px;"><strong>Female</strong>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">States:</label>
+                        <select id="country" name="country">
+                            <option value="usa">Delhi</option>
+                            <option value="canada">Uttar Pradesh</option>
+                            <option value="uk">jharkhand</option>
+                            <option value="australia">Haryana</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Interests:</label>
+                        <textarea id="interests" name="interests" rows="4" placeholder="Tell us about your interests"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="subscribe" name="subscribe" value="yes" style="width:15px"><strong>I accept all terms and conditions</strong>
+                    </div>
+                    <div class="btn-container">
+                        <button type="submit"onclick="validateForm()">Sign Up</button>
+                        <button type="reset" class="btn btn-reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
+    <script>
+        function validateForm() {
+            var nameInput = document.getElementById("name");
+            var emailInput = document.getElementById("email");
+            var passwordInput = document.getElementById("password");
+            var valid = true;
+
+            if (nameInput.value === "") {
+                alert("Username must be filled out");
+                valid = false;
+            }
+            if (passwordInput.value.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                valid = false;
+            }
+        }
+    </script>
+</body>
+</html
